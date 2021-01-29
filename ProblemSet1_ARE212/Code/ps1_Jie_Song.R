@@ -1,0 +1,47 @@
+# Problem Set 1 - Are 212 - Spring 2021 - Jie Song
+# January 29, 2021
+
+# 4: Install and load the packages you will use in your code.
+
+# install.packages("haven")
+# install.packages("tidyverse")
+
+library(haven)
+library(tidyverse)
+
+# 5: Set your working directory. 
+# Please open this script in 'Code' subfolder
+here <- getwd()
+setwd(here)
+setwd('..')  # move the working directory one level up
+getwd()  # Confirm current wd is folder 'ProblemSet1_ARE212'
+
+# 6: Load your data.
+
+hpricedf <- read_dta("Data/pset1HPRICE2.dta")
+head(hpricedf)
+
+# 7: Work with your data.
+
+summary(hpricedf)
+
+# summarize only price
+
+summary(hpricedf$price)
+
+hpricedf$pricek <- hpricedf$price/1000
+hpricedf <- mutate(hpricedf, price_k = price/1000)
+
+# Make a Histogram of the new variable and also a boxplot
+
+pdf("Output/price_khist.pdf")
+price_khist <- hist(hpricedf$price_k, main = "Histogram of median housing price", xlab = "Median housing price in $1,000")
+dev.off()
+
+jpeg(file = "Output/boxplot_nox.jpg")
+nox_box <- boxplot(hpricedf$nox, main="Nox", xlab = "nitrous oxide, parts per 100 million")
+dev.off()
+
+# 8: Save your output and modified data.
+
+write.csv(hpricedf, file = "Data/hprice.csv")
