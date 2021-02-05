@@ -1,4 +1,5 @@
-# Problem Set 1 - Are 212 - Spring 2021 - Jie Song
+# Problem Set 1 - Are 212 - Spring 2021
+# Group 1: Danyang Li, Shreya Sarkar, Jie Song
 # January 29, 2021
 
 # 4: Install and load the packages you will use in your code.
