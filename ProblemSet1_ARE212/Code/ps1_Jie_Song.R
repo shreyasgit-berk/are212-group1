@@ -15,7 +15,7 @@ here <- getwd()
 setwd(here)
 setwd('..')  # move the working directory one level up
 getwd()  # Confirm current wd is folder 'ProblemSet1_ARE212'
-
+setwd('/Users/lidanyang/Documents/0Berkeley/course/ARE212/are212-group1/ProblemSet1_ARE212') 
 # 6: Load your data.
 
 hpricedf <- read_dta("Data/pset1HPRICE2.dta")
